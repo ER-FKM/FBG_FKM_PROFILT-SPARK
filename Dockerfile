@@ -20,7 +20,7 @@ RUN pip3 install jellyfish
 RUN pip3 install scipy
 
 COPY matched_pairs.csv /opt/bitnami/spark/app/matched_pairs.csv
-COPY FKM_IM1124_NEWSIM5.py /opt/bitnami/spark/app/ER_FKM_JAR_JAR.py
+COPY ER_FKM_JAR_JAR.py /opt/bitnami/spark/app/ER_FKM_JAR_JAR.py
 COPY dataset.csv /opt/bitnami/spark/app/dataset.csv
 COPY matched_pairs.csv /opt/bitnami/spark/app/matched_pairs.csv
 
