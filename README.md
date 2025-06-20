@@ -5,9 +5,6 @@ In the entity resolution field, in the blocking step, grouping similar records w
 To address this challenge, this method introduces a soft assignment method to overcome the uncertainty and ambiguity associated with strict/binary blocking. The soft assignment aims to mitigate this problem by assigning each record to multiple possible blocks, along with a probability of belonging. This method offers greater flexibility and precision, balancing the trade off between efficiency and effectiveness. It consists of two steps:
 •	Fuzzy Block Generator (FBG): Constructs efficient overlapping blocks.
 •	Probabilistic Filtering (ProbFilt): Filters out unnecessary comparisons.
-To improve both accuracy and efficiency, we redesign and implement a fully distributed version of these two core steps on the Apache Spark framework, enabling the approach to scale effectively across large datasets. In the first step, we introduce a significant adaptation of the fuzzy clustering algorithm, originally designed for categorical data, to enable its application to alphanumeric data. In the second step, we use an automated method for selecting thresholds. 
-
-
 
 ## Installation & Usage
 ### Prerequisites
