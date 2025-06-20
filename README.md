@@ -39,9 +39,6 @@ Input: dataset.csv (your data file), required schema:
 	matched_pairs.csv
 
 
-## Citation
-If you use this work in your research, please cite:
-    Abdelkrim TABET, Efficient Apache Spark-Based Approach for a Probabilistic Entity Resolution
 
 ## Contributing
 Contributions are welcome! If you’d like to help:
