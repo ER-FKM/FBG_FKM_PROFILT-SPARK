@@ -35,7 +35,6 @@ To improve both accuracy and efficiency, we redesign and implement a fully distr
 ## Input 
 Input: dataset.csv (your data file), required schema:
     id,name,attribute1,attribute2,...
-	paramaters: Similarity Strings Function, 
 	matched_pairs.csv
 
 
