@@ -1,0 +1,255 @@
+#bitnami/spark:latest
+
+services:
+  spark-master-c10:
+    build: .
+    image: bitnami/spark:latest #spark-image:latest
+    container_name: spark-master-c10
+    environment:
+      - SPARK_MODE=master
+      - SPARK_MASTER_HOST=spark-master-c10
+    ports:
+      - "7077:7077"
+      - "8080:8080"  # Spark Web UI
+    networks:
+      - spark-network
+
+  spark-worker-c10-1:
+    build: .
+    image: bitnami/spark:latest #spark-image:latest
+    container_name: spark-worker-c10-1
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master-c10:7077
+      - SPARK_WORKER_MEMORY=12g
+      - SPARK_WORKER_CORES=4
+      - SPARK_EXECUTOR_CORES=2
+      - SPARK_EXECUTOR_MEMORY=6g
+    depends_on:
+      - spark-master-c10
+    deploy:
+      resources:
+        limits:
+          cpus: '4.0'
+          memory: 12g
+    networks:
+      - spark-network
+
+  spark-worker-c10-2:
+    build: .
+    image: bitnami/spark:latest #spark-image:latest
+    container_name: spark-worker-c10-2
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master-c10:7077
+      - SPARK_WORKER_MEMORY=12g
+      - SPARK_WORKER_CORES=4
+      - SPARK_EXECUTOR_CORES=2
+      - SPARK_EXECUTOR_MEMORY=6g
+    depends_on:
+      - spark-master-c10
+    deploy:
+      resources:
+        limits:
+          cpus: '4.0'
+          memory: 12g
+    networks:
+      - spark-network
+
+  spark-worker-c10-3:
+    build: .
+    image: bitnami/spark:latest #spark-image:latest
+    container_name: spark-worker-c10-3
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master-c10:7077
+      - SPARK_WORKER_MEMORY=12g
+      - SPARK_WORKER_CORES=4
+      - SPARK_EXECUTOR_CORES=2
+      - SPARK_EXECUTOR_MEMORY=6g
+    depends_on:
+      - spark-master-c10
+    deploy:
+      resources:
+        limits:
+          cpus: '4.0'
+          memory: 12g
+    networks:
+      - spark-network
+
+  spark-worker-c10-4:
+    build: .
+    image: bitnami/spark:latest #spark-image:latest
+    container_name: spark-worker-c10-4
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master-c10:7077
+      - SPARK_WORKER_MEMORY=12g
+      - SPARK_WORKER_CORES=4
+      - SPARK_EXECUTOR_CORES=2
+      - SPARK_EXECUTOR_MEMORY=6g
+    depends_on:
+      - spark-master-c10
+    deploy:
+      resources:
+        limits:
+          cpus: '4.0'
+          memory: 12g
+    networks:
+      - spark-network
+
+  spark-worker-c10-5:
+    build: .
+    image: bitnami/spark:latest #spark-image:latest
+    container_name: spark-worker-c10-5
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master-c10:7077
+      - SPARK_WORKER_MEMORY=12g
+      - SPARK_WORKER_CORES=4
+      - SPARK_EXECUTOR_CORES=2
+      - SPARK_EXECUTOR_MEMORY=6g
+    depends_on:
+      - spark-master-c10
+    deploy:
+      resources:
+        limits:
+          cpus: '4.0'
+          memory: 12g
+    networks:
+      - spark-network
+
+  spark-worker-c10-6:
+    build: .
+    image: bitnami/spark:latest #spark-image:latest
+    container_name: spark-worker-c10-6
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master-c10:7077
+      - SPARK_WORKER_MEMORY=12g
+      - SPARK_WORKER_CORES=4
+      - SPARK_EXECUTOR_CORES=2
+      - SPARK_EXECUTOR_MEMORY=6g
+    depends_on:
+      - spark-master-c10
+    deploy:
+      resources:
+        limits:
+          cpus: '4.0'
+          memory: 12g
+    networks:
+      - spark-network
+
+  spark-worker-c10-7:
+    build: .
+    image: bitnami/spark:latest #spark-image:latest
+    container_name: spark-worker-c10-7
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master-c10:7077
+      - SPARK_WORKER_MEMORY=12g
+      - SPARK_WORKER_CORES=4
+      - SPARK_EXECUTOR_CORES=2
+      - SPARK_EXECUTOR_MEMORY=6g
+    depends_on:
+      - spark-master-c10
+    deploy:
+      resources:
+        limits:
+          cpus: '4.0'
+          memory: 12g
+    networks:
+      - spark-network
+
+  spark-worker-c10-8:
+    build: .
+    image: bitnami/spark:latest #spark-image:latest
+    container_name: spark-worker-c10-8
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master-c10:7077
+      - SPARK_WORKER_MEMORY=12g
+      - SPARK_WORKER_CORES=4
+      - SPARK_EXECUTOR_CORES=2
+      - SPARK_EXECUTOR_MEMORY=6g
+    depends_on:
+      - spark-master-c10
+    deploy:
+      resources:
+        limits:
+          cpus: '4.0'
+          memory: 12g
+    networks:
+      - spark-network
+
+  spark-worker-c10-9:
+    build: .
+    image: bitnami/spark:latest #spark-image:latest
+    container_name: spark-worker-c10-9
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master-c10:7077
+      - SPARK_WORKER_MEMORY=12g
+      - SPARK_WORKER_CORES=4
+      - SPARK_EXECUTOR_CORES=2
+      - SPARK_EXECUTOR_MEMORY=6g
+    depends_on:
+      - spark-master-c10
+    deploy:
+      resources:
+        limits:
+          cpus: '4.0'
+          memory: 12g
+    networks:
+      - spark-network
+
+  spark-worker-c10-10:
+    build: .
+    image: bitnami/spark:latest #spark-image:latest
+    container_name: spark-worker-c10-10
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master-c10:7077
+      - SPARK_WORKER_MEMORY=12g
+      - SPARK_WORKER_CORES=4
+      - SPARK_EXECUTOR_CORES=2
+      - SPARK_EXECUTOR_MEMORY=6g
+    depends_on:
+      - spark-master-c10
+    deploy:
+      resources:
+        limits:
+          cpus: '4.0'
+          memory: 12g
+    networks:
+      - spark-network
+
+  pyspark-app-c10:
+    build: .
+    container_name: payspark-app-c10
+    environment:
+      - SPARK_MASTER_URL=spark://spark-master-c10:7077
+      - SPARK_EXECUTOR_MEMORY=6g    # Memory for executors
+      - SPARK_DRIVER_MEMORY=30g       # Memory for the driver  
+      - SPARK_EXECUTORS_INSTANCES=20
+    depends_on:
+      - spark-master-c10
+      - spark-worker-c10-1
+      - spark-worker-c10-2
+      - spark-worker-c10-3
+      - spark-worker-c10-4
+      - spark-worker-c10-5
+      - spark-worker-c10-6
+      - spark-worker-c10-7
+      - spark-worker-c10-8    
+      - spark-worker-c10-9
+      - spark-worker-c10-10      
+    ports:
+      - "4040:4040"
+    networks:
+      - spark-network
+
+networks:
+  spark-network:
+    driver: bridge
+
