@@ -25,6 +25,7 @@ sparkcontxt = spark.sparkContext
 sparkcontxt.setLogLevel("WARN")
 
 
+
 def BlockingKey_Generator(x,bk0):
   import pandas as pd
   import numpy as np
@@ -339,7 +340,7 @@ initial_mode0 = []
 mydata = pairs.collect()
 cpt = clustersNumber
 r_numbers = [random.randint(0, sizeData-1) for _ in range(cpt)]
-for i in range(len(random_numbers)):
+for i in range(len(r_numbers)):
   initial_mode0.append(((mydata[r_numbers[i]][1],mydata[r_numbers[i]][2]),cpt))
   cpt=cpt-1
 intial_mode = initial_mode0
@@ -347,7 +348,7 @@ nowim2 = datetime.now()
 clustersNumber=len(intial_mode)
 ############### Fuzzy K-Modes Algorithm ###########################
 print("************************************************************************")
-print("-->  Fuzzy K-Mode Algorithm - Update Mode : Old  -   ")
+print("-->  Adapted Fuzzy K-Mode Algorithm   ")
 print("************************************************************************")
 from datetime import datetime
 nowfkm1 = datetime.now()
@@ -499,8 +500,8 @@ while (cpt<=endit):
     ccrdd = pairs100
     clustersNumber = pairs100.count()
     data1 = []
-    cpt=cpt+1
   else : cpt = 30
+  cpt=cpt+1
 
 pairs3.persist()
 
@@ -654,7 +655,7 @@ grouped_rdd =filtered_rdd.map(lambda x: (x[0], x[1][0][0])).groupByKey().mapValu
 
 
 record_rdd22 = joined_rdd.filter(lambda x: x[1][0][len(x[1][0])-1] < x[1][1])
-grouped_rdd22 = record_rdd22.map(lambda x: round((x[1][0][0],4))
+grouped_rdd22 = record_rdd22.map(lambda x: round((x[1][0][0],4)))
 rdd_thresholds22 = grouped_rdd22.mapValues(max_entropy_threshold)
 rdd22_kv = rdd_thresholds22.map(lambda x: (x[0], x[1]))
 joined_rdd22 = rdd22_kv.leftOuterJoin(rdd2_kv).repartition(120)
@@ -812,4 +813,3 @@ def normalize_pair(pair):
     return tuple(sorted(pair))
 
 spark.stop()
-
